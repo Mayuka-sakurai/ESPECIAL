@@ -1,0 +1,170 @@
+body {
+  width: 1000px;
+
+  margin: 0 auto;
+}
+
+.clear {
+  clear: both;
+}
+#room_review {
+  font-weight: 700;
+  font-size: 25pt;
+  display: inline-block;
+  color: #e8175d;
+  margin-right: 50px;
+  padding-left: 30px;
+}
+#room_category {
+  font-weight: 600;
+  font-size: 15pt;
+  display: inline-block;
+  color: #474747;
+}
+
+#titlepart {
+  font-weight: 600;
+  font-size: 20pt;
+  display: inline;
+  color: #e8175d;
+  padding-left: 30px;
+}
+
+.reply_count,
+#readcount {
+  font-weight: 700;
+  color: #cc527a;
+}
+#readcount {
+  float: right;
+  text-align: justify;
+  padding-right: 30px;
+}
+.reply_text {
+  font-weight: 600;
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+}
+.reply_modify,
+.reply_delete {
+  float: right;
+  font-weight: 600;
+}
+.reply_text {
+  font-size: 14pt;
+}
+.reply_content {
+  font-size: 13pt;
+}
+
+.reply_modify {
+  margin-right: 30px;
+}
+
+.reply_delete {
+  margin-right: 30px;
+}
+#userid,
+#update-date,
+#textpart {
+  font-size: 15pt;
+}
+
+#userid {
+  padding-left: 30px;
+}
+.reply_date {
+  color: #a8a7a7;
+}
+
+#userid,
+#update-date {
+  display: inline-block;
+}
+
+#userid {
+  color: #cc527a;
+  font-weight: 600;
+  display: inline-flexbox;
+  margin-right: 70px;
+}
+
+#update-date {
+  color: #a8a7a7;
+}
+
+#textpart {
+  color: #363636;
+}
+
+#listview,
+#review_modify,
+#review_delete {
+  color: whitesmoke;
+  font-weight: 500;
+  font-size: 13pt;
+  text-align: justify;
+}
+
+.contents_btn {
+  padding-left: 30px;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+
+label {
+  background-color: #e8175d;
+  padding-bottom: 2px;
+}
+
+[type="button"] {
+  width: 60px;
+  height: 32px;
+  background-color: #e8175d;
+  border: 0;
+}
+
+#userid,
+#update_date {
+  display: inline-block;
+}
+#userid {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+#textpart {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+}
+
+#btn_right {
+  float: right;
+  padding-right: 30px;
+}
+
+a {
+  color: #cc527a;
+}
+
+.contents_btn {
+  margin-bottom: 20px;
+}
+
+.reply_text,
+.reply_content {
+  margin-left: 30px;
+}
+
+.reply-hover :hover {
+  color: white;
+  background-color: #eea9c0;
+}

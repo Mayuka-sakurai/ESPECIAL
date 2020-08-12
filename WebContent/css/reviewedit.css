@@ -1,0 +1,83 @@
+/*another header-section Override*/
+.header-section {
+  background: #474747;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+optgroup,
+option {
+  font-size: 11.5pt;
+}
+
+select {
+  height: 35px;
+  border: 1px solid #a8a7a7;
+  border-radius: 4px;
+}
+
+#texttitle {
+  height: 35px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #a8a7a7;
+}
+
+#main-title {
+  color: #363636;
+  font-weight: 900;
+  font-size: 40pt;
+}
+
+#sub-title {
+  color: #363636;
+  font-weight: 400;
+  font-size: large;
+}
+
+.ck.ck-editor {
+  width: 500px;
+}
+
+.ck-editor__editable {
+  height: 500px;
+}
+
+.form-size {
+  width: 1200px;
+
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#btns {
+}
+
+#submitbtn {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 18px 38px;
+  color: #ffffff;
+  background: #e8175d;
+  letter-spacing: 0.5px;
+}
+
+#editorname {
+  float: right;
+}

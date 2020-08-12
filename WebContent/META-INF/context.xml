@@ -1,0 +1,13 @@
+<Context>
+	<Resource
+		name = "jdbc/MySQ"
+		auth = "Container"
+		type = "javax.sql.DataSource"
+		username ="root"
+		password = "dolly00"
+		drivereClassName = "com.mysql.jdbc.Driver"
+		factory = "org.apache.dbcp.BasicDataSourceFactory"
+		url="jdbc:mysql://localhost:3306/especial?characterEncoding=UTF8&amp;serverTimezone=UTC"
+		maxActive="500"
+	/>
+</Context>

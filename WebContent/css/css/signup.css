@@ -1,0 +1,67 @@
+.set-bg {
+    background-image: url(img/signup_top.jpg);
+    background-repeat: no-repeat;
+}
+
+td,
+tr {
+    height: 50px;
+}
+
+.ness {
+    color: #E8175D;
+}
+
+td:first-child {
+    font-weight: 600;
+    background-color: #f8f0f3;
+    width: 200px;
+    padding-left: 20px;
+}
+
+td:nth-child(2n) {
+    padding-left: 30px;
+}
+
+#wrap_form {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+
+input[type=text],
+input[type=password],
+select {
+    height: 30px;
+}
+
+.cancel-btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 18px 38px;
+    color: #ffffff;
+    background: #a8a7a7;
+    letter-spacing: 0.5px;
+    position: relative;
+    left: 50px;
+}
+
+.primary-btn {
+    position: relative;
+    left: 50px;
+}
+
+.nav-right {
+    margin-right: 50px;
+    font-weight: 400;
+}
+
+#zipcode {
+    width: 100px;
+    height: 35px;
+}
+
+.subtext {
+    font-size: 9pt;
+}

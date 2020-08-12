@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+
+<mapper namespace="review">
+
+	<select id="listCount" resultType="Integer">
+		select max(room_review_no)
+		from especial.room_review
+	</select>
+
+	<insert id="insertArticle">
+
+		insert into especial.room_review values(
+		#{room_review_no}, #{room_review_category}, #{room_review_title},
+		#{room_review_contents},
+		#{member_id}, #{member_password}, 000,
+		#{room_review_file},
+		#{BOARD_RE_REF}, #{BOARD_RE_LEV}, #{BOARD_RE_SEQ},
+		#{BOARD_READCOUNT}, now()
+		);
+
+	</insert>
+
+	<select id="selectArticleList"
+		resultType="com.especial.VO.BoardBean" parameterType="Integer">
+
+		select * from
+		especial.room_review order by room_review_no desc,
+		room_review_date
+		desc limit #{startrow}, 10
+
+	</select>
+
+	<select id="selectListCount" resultType="Integer">
+		select count(*) from
+		especial.room_review
+	</select>
+
+	<select id="selectArticle" parameterType="Integer"
+		resultType="com.especial.VO.BoardBean">
+		select * from especial.room_review where room_review_no =
+		#{room_review_no}
+	</select>
+
+	<update id="updateReadCount" parameterType="Integer">
+		update
+		especial.room_review set BOARD_READCOUNT = BOARD_READCOUNT + 1 where
+		room_review_no = #{room_review_no}
+
+	</update>
+
+	<select id="hotelArticleCount" resultType="Integer">
+		select count(*) from
+		especial.room_review where
+		room_review_category = 'president' or
+		room_review_category =
+		'suite' or
+		room_review_category = 'double' or
+		room_review_category
+		= 'single' or
+		room_review_category = 'family'
+
+	</select>
+
+	<select id="facilityArticleCount" resultType="Integer">
+		select count(*)from
+		especial.room_review where room_review_category = 'wedding' or
+		'Conference'
+	</select>
+
+	<select id="hallArticleCount" resultType="Integer">
+
+		select count(*) from
+		especial.room_review where
+		room_review_category =
+		'wedding' or
+		room_review_category = 'conference'
+
+	</select>
+
+	<select id="isArticleBoardWriter"
+		resultType="com.especial.VO.BoardBean" parameterType="String">
+		select member_id,
+		member_pw from especial.room_review where room_review_no =
+		#{room_review_no}
+	</select>
+
+	<update id="updateArticle">
+
+		update especial.room_review set 
+		room_review_title = #{room_review_title},
+		room_review_contents = #{room_review_content}, 
+		room_review_file = #{room_review_file} 
+		where room_review_no = #{room_review_no}
+		
+	</update>
+
+</mapper>
