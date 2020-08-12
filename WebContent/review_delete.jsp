@@ -1,5 +1,5 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"%>
-<%@page import ="com.especial.VO.*" %>
+<%@page import ="com.especial.VO.BoardBean" %>
 <% 
 	
 	String nowPage = (String)request.getAttribute("page");
