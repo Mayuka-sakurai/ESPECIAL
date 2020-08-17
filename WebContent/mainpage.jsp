@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset = UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
 	String id = (String)session.getAttribute("id");
 	String pw = (String)session.getAttribute("pw");
 	
@@ -8,7 +9,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="KO">
 
 <head>
 <meta charset="UTF-8">
@@ -38,19 +39,19 @@
 	</div>
 
 	<!-- Header Section Begin -->
-	<header class="header-section">
+		<header class="header-section">
 		<div class="container-fluid">
 			<div class="inner-header">
 				<div class="logo">
 					<a href="mainpage.jsp"><img src="img/logo.png"
-						alt="ë¡ê³ ì´ë¯¸ì§"></a>
+						alt="메인이미지"></a>
 				</div>
 				<nav class="nav-right">
 					<ul>
 						<li><a href="#">JP</a></li>
 						<li><a href="#">KO</a></li>
 						<li><a href="login.html">Login</a></li>
-						<li><a href="signup.html">Signup</a></li>
+						<li><a href="signup.jsp">Signup</a></li>
 					</ul>
 				</nav>
 				<nav class="main-menu mobile-menu">
@@ -340,7 +341,7 @@
 								ííì ëë¦¬ê³  ììµëë¤<br /> ESPECIALì ê°ì¡±ì´
 								ëì¤ ê³ ê°ëì ì§ì¬ì¼ë¡ ê¸°ë¤ë¦½ëë¤!
 							</p>
-							<a href="signup.html" class="primary-btn">Sign up</a>
+							<a href="signup.jsp" class="primary-btn">Sign up</a>
 						</div>
 					</div>
 				</div>
@@ -363,63 +364,7 @@
 
 		<!-- Footer Section Begin -->
 		<footer class="footer-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4">
-						<div class="footer-item">
-							<div class="footer-logo">
-								<a href="mainpage.jsp"><img src="img/logo.png"
-									alt="í¸í°ë¡ê³ "></a>
-							</div>
-							<p>
-								ESPECIAL Hotel & Resort<br /> ëíì : ì´ì§ì<br />
-								ì¬ììë±ë¡ë²í¸ : 123-45-67890<br /> íµì íë§¤ì
-								ì ê³ ë²í¸ : 1234-ìì¸ê°ë¨-1234 <br />
-								ê°ì¸ì ë³´ê´ë¦¬ì±ìì : ì´ì§ì<br />
-
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-4">
-						<div class="footer-item">
-							<h5>Contact Info</h5>
-							<ul>
-								<li><img src="img/placeholder.png" alt="ìì¹ ì´ë¯¸ì§" />110,
-									Sejong Daero Jung-gu <br />Seoul,S.Korea<br />
-								<br /> ìì¸í¹ë³ì ì¤êµ¬ ì¸ì¢ëë¡ 110(ííë¡1ê°)</li>
-								<li><img src="img/phone.png" alt="ì íê¸° ì´ë¯¸ì§" />+82(2)123-4567</li>
-								<li><img src="#" alt="facebook" /><img src="#"
-									alt="instgram" /><img src="#" alt="line" /><img src="#"
-									alt="youtube" /></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="copyright">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<ul>
-								<li class="active"><a href="mainpage.jsp">Home</a></li>
-								<li><a href="#">Hotel</a></li>
-								<li><a href="#">Wedding & Convention</a></li>
-								<li><a href="#">Facilities</a></li>
-								<li><a href="#">offers</a></li>
-								<li><a href="#">Promotions</a></li>
-								<li><a href="#">About us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="row pt-5">
-						<div class="col-lg-12">
-							<div class="small text-white text-center" id="copyright">
-
-								Copyright &copy; Zia Lee. All rights reserved.</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<%@include file="footer.jsp" %>
 		</footer>
 		<!-- Footer Section End -->
 

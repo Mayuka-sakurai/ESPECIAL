@@ -20,55 +20,7 @@
 
 <header class="header-section set-bg"
 	style="background-image: url(img/signup_top.jpg);">
-	<div class="container-fluid">
-		<div class="inner-header">
-			<div class="logo">
-				<a href="mainpage.html"><img src="img/logo.png" alt="로고이미지"></a>
-			</div>
-			<nav class="nav-right">
-				<ul>
-					<li><a href="#">JP</a></li>
-					<li><a href="mainpage.jsp">KO</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="signup.html">Signup</a></li>
-				</ul>
-			</nav>
-			<nav class="main-menu mobile-menu">
-				<ul>
-					<li><a href="#">Hotel</a>
-						<ul class="drop-menu">
-							<li><a href="#">President Room</a></li>
-							<li><a href="#">Suite Room</a></li>
-							<li><a href="#">Residence Double</a></li>
-							<li><a href="#">Residence Single</a></li>
-							<li><a href="#">Family Room</a></li>
-						</ul></li>
-					<li><a href="#">Wedding & Convention</a>
-						<ul class="drop-menu">
-							<li><a href="#">Wedding Hall</a></li>
-							<li><a href="#">Convention Room</a></li>
-						</ul></li>
-					<li><a href="#">Facilities</a>
-						<ul class="drop-menu">
-							<li><a href="#">Swimming Pool</a></li>
-							<li><a href="#">Bar</a></li>
-							<li><a href="#">Dining</a></li>
-							<li><a href="#">Spa & Gym</a></li>
-						</ul></li>
-					<li><a href="#">Offers</a></li>
-					<li><a href="#">Promotions</a></li>
-					<li><a href="#">About us</a>
-						<ul class="drop-menu">
-							<li><a href="#">Location</a></li>
-							<li><a href="#">News</a></li>
-							<li><a href="#">Contact us</a></li>
-							<li><a href="#">Inquiry</a></li>
-							<li><a href="room_reviewedit.jsp">Review</a></li>
-						</ul></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+<%@include file="header.html" %>
 </header>
 <!-- Header Menu End -->
 
@@ -245,6 +197,7 @@
 		</form>
 	</div>
 </div>
+<%@include file="footer.jsp"%>
 </body>
 <script src="js/join.js"></script>
 <script

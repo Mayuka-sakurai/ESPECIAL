@@ -12,7 +12,7 @@
 <meta charset="UTF-8" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
 <title>::ESPECIAL::</title>
 
 <!-- Google Font -->
@@ -35,58 +35,7 @@
 	</div>
 
 	<!-- Header Section Begin -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="inner-header">
-				<div class="logo">
-					<a href="mainpage.jsp"><img src="img/logo.png"
-						alt="Ã«Â¡ÂÃªÂ³Â Ã¬ÂÂ´Ã«Â¯Â¸Ã¬Â§Â" /></a>
-				</div>
-				<nav class="nav-right">
-					<ul>
-						<li><a href="#">JP</a></li>
-						<li><a href="#">KO</a></li>
-						<li><a href="login.html">Login</a></li>
-						<li><a href="signup.html">Signup</a></li>
-					</ul>
-				</nav>
-				<nav class="main-menu mobile-menu">
-					<ul>
-						<li><a href="#">Hotel</a>
-							<ul class="drop-menu">
-								<li><a href="#">President Room</a></li>
-								<li><a href="#">Suite Room</a></li>
-								<li><a href="#">Residence Double</a></li>
-								<li><a href="#">Residence Single</a></li>
-								<li><a href="#">Family Room</a></li>
-							</ul></li>
-						<li><a href="#">Wedding & Convention</a>
-							<ul class="drop-menu">
-								<li><a href="#">Wedding Hall</a></li>
-								<li><a href="#">Convention Room</a></li>
-							</ul></li>
-						<li><a href="#">Facilities</a>
-							<ul class="drop-menu">
-								<li><a href="#">Swimming Pool</a></li>
-								<li><a href="#">Bar</a></li>
-								<li><a href="#">Dining</a></li>
-								<li><a href="#">Spa & Gym</a></li>
-							</ul></li>
-						<li><a href="#">Offers</a></li>
-						<li><a href="#">Promotions</a></li>
-						<li><a href="#">About us</a>
-							<ul class="drop-menu">
-								<li><a href="#">Location</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Contact us</a></li>
-								<li><a href="#">Inquiry</a></li>
-								<li><a href="review.html">Review</a></li>
-							</ul></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
+	<%@include file="header.html" %>
 	<!-- Header End -->
 
 	<!-- Hero Area Section Begin -->
@@ -156,69 +105,7 @@
 	<!-- Review Edit Section End -->
 
 	<!-- Footer Section Begin -->
-	<footer class="footer-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-item">
-						<div class="footer-logo">
-							<a href="mainpage.html"><img
-								src="img/logo.png" alt="Ã­ÂÂ¸Ã­ÂÂ°Ã«Â¡ÂÃªÂ³Â " /></a>
-						</div>
-						<p>
-							ESPECIAL Hotel & Resort<br /> Ã«ÂÂÃ­ÂÂÃ¬ÂÂ :
-							Ã¬ÂÂ´Ã¬Â§ÂÃ¬ÂÂ<br />
-							Ã¬ÂÂ¬Ã¬ÂÂÃ¬ÂÂÃ«ÂÂ±Ã«Â¡ÂÃ«Â²ÂÃ­ÂÂ¸ : 123-45-67890<br />
-							Ã­ÂÂµÃ¬ÂÂ Ã­ÂÂÃ«Â§Â¤Ã¬ÂÂ Ã¬ÂÂ ÃªÂ³Â Ã«Â²ÂÃ­ÂÂ¸ :
-							1234-Ã¬ÂÂÃ¬ÂÂ¸ÃªÂ°ÂÃ«ÂÂ¨-1234 <br />
-							ÃªÂ°ÂÃ¬ÂÂ¸Ã¬Â ÂÃ«Â³Â´ÃªÂ´ÂÃ«Â¦Â¬Ã¬Â±ÂÃ¬ÂÂÃ¬ÂÂ :
-							Ã¬ÂÂ´Ã¬Â§ÂÃ¬ÂÂ<br />
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="footer-item">
-						<h5>Contact Info</h5>
-						<ul>
-							<li><img src="img/placeholder.png"
-								alt="Ã¬ÂÂÃ¬Â¹Â Ã¬ÂÂ´Ã«Â¯Â¸Ã¬Â§Â" />110, Sejong Daero
-								Jung-gu <br />Seoul,S.Korea<br />
-							<br /> Ã¬ÂÂÃ¬ÂÂ¸Ã­ÂÂ¹Ã«Â³ÂÃ¬ÂÂ Ã¬Â¤ÂÃªÂµÂ¬
-								Ã¬ÂÂ¸Ã¬Â¢ÂÃ«ÂÂÃ«Â¡Â 110(Ã­ÂÂÃ­ÂÂÃ«Â¡Â1ÃªÂ°Â)</li>
-							<li><img src="img/phone.png"
-								alt="Ã¬Â ÂÃ­ÂÂÃªÂ¸Â° Ã¬ÂÂ´Ã«Â¯Â¸Ã¬Â§Â" />+82(2)123-4567</li>
-							<li><img src="#" alt="facebook" /><img src="#"
-								alt="instgram" /><img src="#" alt="line" /><img
-								src="#" alt="youtube" /></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<ul>
-							<li class="active"><a href="mainpage.html">Home</a></li>
-							<li><a href="#">Hotel</a></li>
-							<li><a href="#">Wedding & Convention</a></li>
-							<li><a href="#">Facilities</a></li>
-							<li><a href="#">offers</a></li>
-							<li><a href="#">Promotions</a></li>
-							<li><a href="#">About us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row pt-5">
-					<div class="col-lg-12">
-						<div class="small text-white text-center">Copyright &copy;
-							Zia Lee. All rights reserved.</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<%@include file="footer.jsp" %>
 	<!-- Footer Section End -->
 
 	<!-- Js Plugins -->

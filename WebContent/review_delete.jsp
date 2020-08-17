@@ -19,12 +19,7 @@
 	<section id="deletepage">
 
 		<section name="header">
-			<header>
-				<!-- 헤더 추가하여 넣기-->
-				<div id="header">
-					<img src="http://placehold.it/1000x200" />
-				</div>
-			</header>
+			<%@include file="header.html" %>
 		</section>
 		<section class="content">
 
@@ -51,7 +46,7 @@
 
 
 			</form>
-
+	<%@include file="footer.jsp" %>
 
 		</section>
 	</section>
