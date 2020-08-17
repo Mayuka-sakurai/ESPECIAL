@@ -112,7 +112,7 @@ public class BoardController extends javax.servlet.http.HttpServlet
 				}
 
 			}
-			}
+		}
 
 	}
 
