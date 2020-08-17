@@ -44,7 +44,7 @@
 			<div class="inner-header">
 				<div class="logo">
 					<a href="mainpage.jsp"><img src="img/logo.png"
-						alt="메인이미지"></a>
+						alt="메인이미지"></a>
 				</div>
 				<nav class="nav-right">
 					<ul>
@@ -82,7 +82,7 @@
 							<ul class="drop-menu">
 								<li><a href="#">Location</a></li>
 								<li><a href="#">News</a></li>
-								<li><a href="#">Contact us</a></li>
+								<li><a href="contactus.html">Contact us</a></li>
 								<li><a href="#">Inquiry</a></li>
 								<li><a href="room_reviewedit.jsp">Review</a></li>
 							</ul></li>
@@ -94,6 +94,7 @@
 	<!-- Header End -->
 
 	<!-- Hero Area Section Begin -->
+	<!-- Video Section Begin -->
 	<section class="hero-area set-bg" data-setbg="img/main/main1.png">
 		<div class="container">
 			<div class="row">
@@ -115,10 +116,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- Hero Area Section End -->
-	<!-- Video Section Begin -->
-
 	<!-- Video Section End -->
+	<!-- Hero Area Section End -->
+
 	<!-- Search Filter Section Begin -->
 	<section class="search-filter">
 		<div class="container">

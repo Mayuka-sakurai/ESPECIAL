@@ -121,10 +121,10 @@
 		src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js "></script>
 	<script src="textedit.js"></script>
 </body>
-<!-- Texteditor ÃªÂ´ÂÃ«Â Â¨ Script -->
+<!-- Texteditor  Script -->
 <script>
     ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
       console.error(error);
     });
-  </script>
+</script>
 </html>
