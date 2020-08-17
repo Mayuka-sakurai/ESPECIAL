@@ -2,8 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("UTF-8");
-	String id = (String)session.getAttribute("id");
-	String pw = (String)session.getAttribute("pw");
+String id = (String)session.getAttribute("id");
+String pw = (String)session.getAttribute("pw");
+
+
+
+	System.out.println(id);
 	
 %>
 
@@ -50,8 +54,14 @@
 					<ul>
 						<li><a href="#">JP</a></li>
 						<li><a href="#">KO</a></li>
+						<%if(id == null) {%>
 						<li><a href="login.html">Login</a></li>
 						<li><a href="signup.jsp">Signup</a></li>
+						
+						<%}else{ %>
+						<li><a href="login.html">Logout</a></li>
+						<li><a href="booking.jsp">MyPage</a></li>
+						<%} %>
 					</ul>
 				</nav>
 				<nav class="main-menu mobile-menu">

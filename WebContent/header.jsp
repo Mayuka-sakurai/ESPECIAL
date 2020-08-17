@@ -2,6 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("UTF-8");
+String id = (String)session.getAttribute("id");
+String pw = (String)session.getAttribute("pw");
+
+
+	System.out.println(id);
+	
 %>
 
 
@@ -46,8 +52,14 @@
 					<ul>
 						<li><a href="#">JP</a></li>
 						<li><a href="mainpage.jsp">KO</a></li>
+							<%if(id == null) {%>
 						<li><a href="login.html">Login</a></li>
-						<li><a href="signup.html">Signup</a></li>
+						<li><a href="signup.jsp">Signup</a></li>
+						
+						<%}else{ %>
+						<li id="logout" name="logout">Logout</li>
+						<li><a href="booking.jsp">MyPage</a></li>
+						<%} %>
 					</ul>
 				</nav>
 				<nav class="main-menu mobile-menu">
@@ -90,6 +102,13 @@
 </body>
 
 	<!-- Js Plugins -->
+	<script>
+	
+		$('#logout').on("click", function(){
+			 <%session.invalidate();%>
+		});
+	</script>
+	
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
