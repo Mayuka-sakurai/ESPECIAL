@@ -1,23 +1,26 @@
 package com.especial.SVC;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.especial.BoardDAO.BoardDAO;
-import java.sql.Connection;
+
+import com.especial.VO.BoardBean;
 
 
 public class BoardDeleteProService {
 
-	public boolean isArticleWriter(int room_review_no, String member_pw) throws Exception {
-		// TODO Auto-generated method stub
-		
-		boolean isArticleWriter = false;
+	public List<BoardBean> isArticleWriter(int room_review_no) throws Exception {
 
 		BoardDAO boardDAO = new BoardDAO();
 		BoardDAO.getinstance();
-		
-		isArticleWriter = boardDAO.isArticleBoardWriter(room_review_no, member_pw);
+		List<BoardBean> writerInfo = new ArrayList<BoardBean>();
+		writerInfo = boardDAO.isArticleBoardWriter(room_review_no);
 
-		return isArticleWriter;
+		// 글쓴이의 id 반환
+		
+		return writerInfo;
 		
 	}
 
@@ -27,17 +30,15 @@ public class BoardDeleteProService {
 		boolean isRemoveSuccess = false;
 		BoardDAO boardDAO = BoardDAO.getinstance();
 		int deleteCount = boardDAO.deleteArticle(room_review_no);
+		System.out.println(room_review_no);
+		System.out.println("****************"+deleteCount);
 		
-		
-//		if(deleteCount > 0){
-//			commit(con);
-//			isRemoveSuccess = true;
-//		}
-//		else{
-//			rollback(con);
-//		}
-//		
-//		close(con);
+		if(deleteCount == 1) {
+			isRemoveSuccess = true;
+		}else {
+			System.out.println("삭제실패");
+		}
+
 		return isRemoveSuccess;
 	}
 

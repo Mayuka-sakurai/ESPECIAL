@@ -41,7 +41,7 @@ System.out.println("디테일페이지내용" + article);
 		<section id="review_part">
 			<div>
 				<div id="room_review">Visitor Review</div>
-				<div id="room_category">Category</div>
+				<div id="room_category"><%=article.get(0).getRoom_review_category() %></div>
 				<hr class="border_bold" />
 			</div>
 			<div id="titlepart">
@@ -74,7 +74,7 @@ System.out.println("디테일페이지내용" + article);
 							alt="삭제이미지" /> <input type="button" name="review_delete"
 							id="review_delete" value="삭제" />
 					</label>
-				</a>s
+				</a>
 				</span>
 
 			</div>

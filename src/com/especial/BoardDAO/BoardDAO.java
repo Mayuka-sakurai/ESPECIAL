@@ -187,12 +187,13 @@ public class BoardDAO {
 
 		SqlSession sqlsession = sqlfactory.openSession();
 
-		List<BoardBean> writerInfo = new ArrayList<BoardBean>();
+		List<BoardBean> wirterInfo = new ArrayList<BoardBean>();
 
-		writerInfo = sqlsession.selectOne("isArticleBoardWriter", room_review_no);
+		wirterInfo = sqlsession.selectList("isArticleBoardWriter", room_review_no);
+		
 		sqlsession.close();
 
-		return writerInfo;
+		return wirterInfo;
 	}
 
 
@@ -204,15 +205,25 @@ public class BoardDAO {
 		updateArticle = sqlsession.selectList("updateArticle", article);
 		sqlsession.commit();
 		sqlsession.close();
+		
 		return updateArticle;
 	}
 	
 
-	//	public int deleteArticle(int room_review_no){
-	//		return 0;
-	//	}
-	//
-	//
+		public int deleteArticle(int room_review_no){
+			int deleteCount = 0;
+			
+			SqlSession sqlsession = sqlfactory.openSession();
+			
+			deleteCount = sqlsession.delete("deleteArticle", room_review_no);
+			
+			sqlsession.commit();
+			sqlsession.close();
+			
+			return deleteCount;
+		}
+	
+	
 	//	public int insertReplyArticle(BoardBean article) {
 	//		return 0;
 	//	}
