@@ -2,7 +2,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@page import="com.especial.VO.BoardBean" %>
+<%@page import="com.especial.VO.BoardBean"%>
 
 
 <%
@@ -64,12 +64,14 @@ System.out.println("디테일페이지내용" + article);
 					for="review_list"><img src="img/list.png" alt="리스트이미지" />
 						<input type="button" id="listview" name="listview" value="목록" />
 				</label>
-				</a> <span id="btn_right"> <a href="room_modify.room?room_review_no=<%=article.get(0).getRoom_review_no()%>&page=<%= nowPage%>"> <label
-						for="review_modify"><img src="img/change.png" alt="수정이미지" />
-							<input type="button" name="review_modify" id="review_modify"
-							value="수정" /> </label>
+				</a> <span id="btn_right"> <a
+					href="room_ModifyForm.room?room_review_no=<%=article.get(0).getRoom_review_no()%>&page=<%= nowPage%>">
+						<label for="review_modify"> <img src="img/change.png"
+							alt="수정이미지" /> <input type="button" name="review_modify"
+							id="review_modify" value="수정" />
+					</label>
 				</a> <a
-					href="boardModifyFrom.bo?board_num=<%=article.get(0).getRoom_review_no()%>&page=<%=nowPage%>">
+					href="room_delete.room?room_review_no=<%=article.get(0).getRoom_review_no()%>&page=<%=nowPage%>">
 						<label for="review_delete"> <img src="img/cancel.png"
 							alt="삭제이미지" /> <input type="button" name="review_delete"
 							id="review_delete" value="삭제" />
@@ -101,7 +103,7 @@ System.out.println("디테일페이지내용" + article);
 					</a>
 					<div class="clear"></div>
 					<div class="reply_content">
-						<textarea style="rows: 20;"></textarea>
+						<textarea style="rows: 20"></textarea>
 					</div>
 					<hr />
 				</div>

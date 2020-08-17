@@ -7,8 +7,8 @@
 <%@ page import="java.util.*"%>
 <%@ page import="java.io.*"%>
 <%@ page import="java.util.Date"%>
-<%@ page import="com.especial.MemberDAO.*" %>
-<%@ page import="com.especial.MemberDTO.*" %>
+<%@ page import="com.especial.MemberDAO.*"%>
+<%@ page import="com.especial.MemberDTO.*"%>
 
 
 

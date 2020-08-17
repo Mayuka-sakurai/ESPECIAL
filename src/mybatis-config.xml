@@ -7,13 +7,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-<!-- 
-	<typeAliases>
-		<typeAlias type="mybatis.exam01.dao" alias="dao" />
-	</typeAliases>
+	<!-- <typeAliases> <typeAlias type="mybatis.exam01.dao" alias="dao" /> </typeAliases> -->
 
- -->
- 
 
 	<environments default="development">
 		<environment id="development">
@@ -29,9 +24,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 
 	<mappers>
-		<mapper resource = "com/especial/Mapper/member.xml" />
-		<mapper resource = "com/especial/Mapper/review.xml"/>
-		
+		<mapper resource="com/especial/Mapper/member.xml" />
+		<mapper resource="com/especial/Mapper/review.xml" />
+
 	</mappers>
 
 </configuration>

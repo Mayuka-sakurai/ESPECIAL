@@ -50,7 +50,7 @@ public class BoardListService {
 		BoardDAO boardDAO = BoardDAO.getinstance();
 		
 		int facilityCount = boardDAO.facilityCount();
-		System.out.println("facility");
+		System.out.println("facility" + facilityCount);
 		return facilityCount;
 	}
 	

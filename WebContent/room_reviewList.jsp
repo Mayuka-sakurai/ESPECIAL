@@ -1,14 +1,14 @@
 
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import ="com.especial.VO.BoardBean" %>
-<%@page import ="com.especial.VO.PageInfo" %>
-<%@page import="com.especial.BoardDAO.*" %>
-<%@page import="com.especial.VO.ReviewCount" %>
-<%@page import ="java.util.*" %>
-<%@page import="java.text.SimpleDateFormat" %>
-<%@page import="com.especial.Action.BoardListAction" %>
-<%@page import="java.io.PrintWriter" %>
+<%@page import="com.especial.VO.BoardBean"%>
+<%@page import="com.especial.VO.PageInfo"%>
+<%@page import="com.especial.BoardDAO.BoardDAO"%>
+<%@page import="com.especial.VO.ReviewCount"%>
+<%@page import="java.util.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.especial.Action.BoardListAction"%>
+<%@page import="java.io.PrintWriter"%>
 
 <% 
 //page detail 관련 내용
@@ -155,9 +155,7 @@
 				<div class="col-lg-8">
 					<!-- Best Review Section Begin -->
 					<h1 Style="font-weight: 600; color: #a8a7a7">: Best Review</h1>
-					<br />
-					<br />
-					<br />
+					<br /> <br /> <br />
 
 					<div class="blog-item" id="best_review">
 						<div class="bi-pic">
@@ -187,41 +185,40 @@
 									class="primary-btn" id="newreview" value="New Review" /></a>
 
 							</thead>
-							
+
 							<tbody>
-							
-<% if(articleList != null && listCount > 0) { %>
-							
-							
-							<tr id="tr_top">
-								<th>No</th>
-								<th>Categories</th>
-								<th>Title</th>
-								<th>Date</th>
-								<th>Editor</th>
-								<th>Hit</th>
-							</tr>
-<%
+
+								<% if(articleList != null && listCount > 0) { %>
+
+
+								<tr id="tr_top">
+									<th>No</th>
+									<th>Categories</th>
+									<th>Title</th>
+									<th>Date</th>
+									<th>Editor</th>
+									<th>Hit</th>
+								</tr>
+								<%
 
 	for(int i = 0; i < articleList.size(); i++){
 
 %>
 
-							<tr class="list" name="viewList">
-								<td><%=articleList.get(i).getRoom_review_no() %></td>
-								<td><%=articleList.get(i).getRoom_review_category() %></td>
-								<td>
-								<a href="reviewDetail.room?room_review_no=<%=articleList.get(i).getRoom_review_no()%>&page=<%=nowPage %>">
-							
-								<%=articleList.get(i).getRoom_review_title() %>
-								</a> 
-								
-								</td>
-								<td><%=articleList.get(i).getRoom_review_date() %></td>
-								<td><%=articleList.get(i).getMember_id() %></td>
-								<td><%=articleList.get(i).getBOARD_READCOUNT() %></td>
-							</tr>
-				<%} %> <!-- for(int i=0; i < asrticleList.size(); i++) 종료  -->
+								<tr class="list" name="viewList">
+									<td><%=articleList.get(i).getRoom_review_no() %></td>
+									<td><%=articleList.get(i).getRoom_review_category() %></td>
+									<td><a
+										href="reviewDetail.room?room_review_no=<%=articleList.get(i).getRoom_review_no()%>&page=<%=nowPage %>">
+
+											<%=articleList.get(i).getRoom_review_title() %>
+									</a></td>
+									<td><%=articleList.get(i).getRoom_review_date() %></td>
+									<td><%=articleList.get(i).getMember_id() %></td>
+									<td><%=articleList.get(i).getBOARD_READCOUNT() %></td>
+								</tr>
+								<%} %>
+								<!-- for(int i=0; i < asrticleList.size(); i++) 종료  -->
 
 							</tbody>
 						</table>
@@ -230,30 +227,36 @@
 
 					<!-- bottom page List count section start -->
 					<div class="blog-pagination">
-					
-				<%if(nowPage <= 1){ %>
-					&lt; &nbsp;
-					<%}else{%>
-					<a href ="room_reviewList.room?page=<%=nowPage -1%>">&lt;</a>&nbsp;
-					<%} %> <!-- for/else 닫기 -->
-					
-					<%for(int a = startPage; a <= endPage; a++){
+
+						<%if(nowPage <= 1){ %>
+						&lt; &nbsp;
+						<%}else{%>
+						<a href="room_reviewList.room?page=<%=nowPage -1%>">&lt;</a>&nbsp;
+						<%} %>
+						<!-- for/else 닫기 -->
+
+						<%for(int a = startPage; a <= endPage; a++){
 						if(a == nowPage){%>
-					[<%=a %>]
-					<%}else{ %>
-						<a href="room_reviewList.room?page=<%=a %>">[<%=a %>]</a>&nbsp;
-						<%} %> <!-- else문 종료 -->
-					<%} %> <!-- for문 종료 -->
-					
-					<%if(nowPage >= maxPage){ %>
+						[<%=a %>]
+						<%}else{ %>
+						<a href="room_reviewList.room?page=<%=a %>">[<%=a %>]
+						</a>&nbsp;
+						<%} %>
+						<!-- else문 종료 -->
+						<%} %>
+						<!-- for문 종료 -->
+
+						<%if(nowPage >= maxPage){ %>
 						&gt;
 						<%}else{ %>
 						<a href="room_reviewList.room?page=<%=nowPage +1 %>">&gt;</a>
-						<%} %> <!-- else문 종료 -->
-					
+						<%} %>
+						<!-- else문 종료 -->
+
 					</div>
 				</div>
-				<%} %> <!-- if(articleList != null && listCount > 0) 종료 -->
+				<%} %>
+				<!-- if(articleList != null && listCount > 0) 종료 -->
 				<!-- bottom page List count section End -->
 				<!-- Categoty count section Start -->
 				<div class="col-lg-4 col-md-6">
@@ -263,18 +266,16 @@
 								<hr>
 								<h4 id="title">::&nbsp;&nbsp;Categories</h4>
 								<ul>
-									<li class="a_list_colorChange" name="hotel">
-										<a href="#">|&nbsp;&nbsp;&nbsp;Hotel<span><sup>(<%= hotel %>)</sup></a></span>
-
-									</li>
-									<li class="a_list_colorChange" name="Facilities">
-										<a href="#"> |&nbsp;&nbsp;&nbsp;Facilities<span><sup>(<%= facility %>)</sup></a></span>
-									</li>
-									<li class="a_list_colorChange" name="offers">
-										<a href="#">|&nbsp;&nbsp;&nbsp;Offers<span><sup>(<%= offer %>)</sup></a></span>
-									</li>
-									<li class="a_list_colorChange" name="wedding">
-									<a href="#">|&nbsp;&nbsp;&nbsp;Wedding & Conference <span><sup>(<%= hall%>)</sup>
+									<li class="a_list_colorChange" name="hotel"><a href="#">|&nbsp;&nbsp;&nbsp;Hotel<span><sup>(<%= hotel %>)
+											</sup></a></span></li>
+									<li class="a_list_colorChange" name="Facilities"><a
+										href="#"> |&nbsp;&nbsp;&nbsp;Facilities<span><sup>(<%= facility %>)
+											</sup></a></span></li>
+									<li class="a_list_colorChange" name="offers"><a href="#">|&nbsp;&nbsp;&nbsp;Offers<span><sup>(<%= offer %>)
+											</sup></a></span></li>
+									<li class="a_list_colorChange" name="wedding"><a href="#">|&nbsp;&nbsp;&nbsp;Wedding
+											& Conference <span><sup>(<%= hall%>)
+											</sup>
 									</a></span></li>
 								</ul>
 							</div>
@@ -317,8 +318,8 @@
 				<div class="col-lg-4">
 					<div class="footer-item">
 						<div class="footer-logo">
-							<a href="mainpage.jsp"><img
-								src="img/logo.png" alt="í¸í°ë¡ê³ " /></a>
+							<a href="mainpage.jsp"><img src="img/logo.png"
+								alt="í¸í°ë¡ê³ " /></a>
 						</div>
 						<p>
 							ESPECIAL Hotel & Resort<br /> ëíì : ì´ì§ì<br />
@@ -333,13 +334,13 @@
 						<h5>Contact Info</h5>
 						<ul>
 							<li><img src="img/placeholder.png" alt="ìì¹ ì´ë¯¸ì§" />110,
-								Sejong Daero Jung-gu <br />Seoul,S.Korea<br />
-							<br /> ìì¸í¹ë³ì ì¤êµ¬ ì¸ì¢ëë¡ 110(ííë¡1ê°)</li>
+								Sejong Daero Jung-gu <br />Seoul,S.Korea<br /> <br />
+								ìì¸í¹ë³ì ì¤êµ¬ ì¸ì¢ëë¡ 110(ííë¡1ê°)</li>
 							<li><img src="img/phone.png" alt="ì íê¸° ì´ë¯¸ì§" />+82(2)123-4567
 							</li>
 							<li><img src="#" alt="facebook" /><img src="#"
-								alt="instgram" /><img src="#" alt="line" /><img
-								src="#" alt="youtube" /></li>
+								alt="instgram" /><img src="#" alt="line" /><img src="#"
+								alt="youtube" /></li>
 						</ul>
 					</div>
 				</div>
@@ -381,6 +382,11 @@
 	<script src="js/jquery.slicknav.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+    ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
+      console.error(error);
+    });
+  </script>
 
 </body>
 

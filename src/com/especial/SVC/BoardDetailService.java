@@ -18,7 +18,7 @@ public class BoardDetailService {
 		System.out.println("디테일 리드카운트"+readCount);
 		article = boardDAO.selectArticle(room_review_no);
 		
-		System.out.println(article);
+		System.out.println("수정후 디테일 아티클"+article);
 
 		return article;
 

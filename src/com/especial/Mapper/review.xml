@@ -88,20 +88,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="isArticleBoardWriter"
-		resultType="com.especial.VO.BoardBean" parameterType="String">
+		resultType="com.especial.VO.BoardBean" parameterType="Integer">
 		select member_id,
-		member_pw from especial.room_review where room_review_no =
+		member_password
+		from especial.room_review where
+		room_review_no =
 		#{room_review_no}
+
 	</select>
 
-	<update id="updateArticle">
+	<update id="updateArticle"
+		parameterType="com.especial.VO.BoardBean">
 
-		update especial.room_review set 
-		room_review_title = #{room_review_title},
-		room_review_contents = #{room_review_content}, 
-		room_review_file = #{room_review_file} 
+		update especial.room_review set
+		room_review_title =
+		#{room_review_title},
+		room_review_contents = #{room_review_content}
+
 		where room_review_no = #{room_review_no}
-		
+
 	</update>
 
+	<delete id="deleteArticle" parameterType="Integer">
+
+		delete from especial.room_review where room_review_no = #{room_review_no};
+
+	</delete>
 </mapper>

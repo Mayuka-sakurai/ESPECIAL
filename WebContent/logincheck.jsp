@@ -8,8 +8,8 @@
 <%@page import="java.io.*"%>
 <%@page import="java.sql.*"%>
 
-<%@page import="com.especial.MemberDAO.*" %>
-<%@page import="com.especial.MemberDTO.*" %>
+<%@page import="com.especial.MemberDAO.*"%>
+<%@page import="com.especial.MemberDTO.*"%>
 
 
 
