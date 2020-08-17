@@ -1,10 +1,8 @@
 package com.especial.SVC;
 
-import java.sql.Connection;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import com.especial.BoardDAO.BoardDAO;
 import com.especial.VO.BoardBean;
@@ -13,13 +11,13 @@ import com.especial.VO.BoardBean;
 public class BoardModifyProService {
 
 	public List<BoardBean> isArticleWriter(int room_review_no) throws Exception {
-		boolean isArticleWriter = false;
+		
 		
 		BoardDAO boardDAO = BoardDAO.getinstance();
-		List<BoardBean> userInfo = new ArrayList<BoardBean>();
+		ArrayList<BoardBean> userInfo = new ArrayList<BoardBean>();
 		// 글 작성자의 information get
-		userInfo = boardDAO.isArticleBoardWriter(room_review_no);
-
+		userInfo = (ArrayList<BoardBean>) boardDAO.isArticleBoardWriter(room_review_no);
+		
 		return userInfo;
 		
 	}
@@ -30,7 +28,11 @@ public class BoardModifyProService {
 		BoardDAO boardDAO = BoardDAO.getinstance();
 		
 		
-		int updateCount = boardDAO.updateArticle(article);
+		List<BoardBean> temp = boardDAO.updateArticle(article);
+		
+		if(temp.size() == 1) {
+			isModifySuccess = true;
+		}
 	
 		return isModifySuccess;
 		
