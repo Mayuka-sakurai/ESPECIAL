@@ -21,7 +21,7 @@
 </head>
 <body>
 
-
+skldksld
 	<%
 	Member_dao dao = new Member_dao();
 	Member_dto dto = new Member_dto();
