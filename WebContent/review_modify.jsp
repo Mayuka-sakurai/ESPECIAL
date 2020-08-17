@@ -42,9 +42,9 @@ System.out.println("articleq1111111111111111111111111"+article.get(0).getRoom_re
 				id="sub-title">We Always Waiting Your Reviews</span>
 		</div>
 		<form action="room_modifypro.room" method="post" name="modifyForm"
-			id="modifyForm" enctype="multipart/form-data">
+			id="modifyForm">
 
-			<input type="text" id="room_review_no" name="room_review_no"
+			<input type="hidden" id="room_review_no" name="room_review_no"
 				value="<%=article.get(0).getRoom_review_no()%>" />
 
 			<hr />
@@ -68,9 +68,9 @@ System.out.println("articleq1111111111111111111111111"+article.get(0).getRoom_re
 								<option value="Conference">Conference Hall</option>
 							</optgroup>
 					</select></td>
-					<td><input type="text" size="400"
+					<td><input type="text"
 						placeholder="&nbsp;&nbsp;title" name="texttitle" id="editor"
-						required="required"
+						required="required" value="12123" style="width: 1000px;"
 						value="<%=article.get(0).getRoom_review_title()%>" /></td>
 				</tr>
 			</table>
@@ -79,17 +79,16 @@ System.out.println("articleq1111111111111111111111111"+article.get(0).getRoom_re
 			<hr />
 			<br />
 			<textarea name="content" id="editor" placeholder="Write here"
-				required="required" cols="131" rows="30"
-				value="<%=article.get(0).getRoom_review_contents() %>">
+				required="required" cols="131" rows="30">
+				<%=article.get(0).getRoom_review_title()%>
         </textarea>
-			<br /> <input type="file" name="userfile" id="userifile">
+			<br />
 			<div id="btns">
-				<br /> <a href="javascript:modifyboard()"> <input type="button"
-					value="submit" class="btn btn-danger btn btn-primary btn-lg"
-					id="submit-btn" /> &nbsp;&nbsp;&nbsp;
-				</a> <a href="javascript:history.go(-1)"> <input type="reset"
-					value="reset" class="btn btn-default btn btn-primary btn-lg"
-					id="reset-btn" />
+				<br /> <input type="submit" value="submit"
+					class="btn btn-danger btn btn-primary btn-lg" id="submit-btn" />
+				&nbsp;&nbsp;&nbsp; <a href="javascript:history.go(-1)"> <input
+					type="reset" value="reset"
+					class="btn btn-default btn btn-primary btn-lg" id="reset-btn" />
 				</a>
 			</div>
 		</form>
@@ -107,10 +106,6 @@ System.out.println("articleq1111111111111111111111111"+article.get(0).getRoom_re
 <script
 	src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js "></script>
 <script src="textedit.js"></script>
-<script type="text/javascript">
-function modifyboard(){
-	modifyForm.submit();
-}
-</script>
+
 
 </html>

@@ -60,12 +60,12 @@ System.out.println("디테일페이지내용" + article);
 
 			<div class="contents_btn">
 
-				<a href="room_reviewList.room?page=<%=nowPage%>"> <label
+				<a href="room_reviewList.room?page=1"> <label
 					for="review_list"><img src="img/list.png" alt="리스트이미지" />
 						<input type="button" id="listview" name="listview" value="목록" />
 				</label>
 				</a> <span id="btn_right"> <a
-					href="room_ModifyForm.room?room_review_no=<%=article.get(0).getRoom_review_no()%>&page=<%= nowPage%>">
+					href="room_ModifyForm.room?room_review_no=<%=article.get(0).getRoom_review_no()%>&page=<%=nowPage%>">
 						<label for="review_modify"> <img src="img/change.png"
 							alt="수정이미지" /> <input type="button" name="review_modify"
 							id="review_modify" value="수정" />

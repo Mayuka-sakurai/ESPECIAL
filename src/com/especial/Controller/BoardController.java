@@ -88,6 +88,7 @@ public class BoardController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}else if(command.equals("/room_modifypro.room")) {
+		
 			System.out.println("컨트롤부분pro "+request.getParameter("room_review_no"));
 			action = new BoardModifyProAction();
 			try {

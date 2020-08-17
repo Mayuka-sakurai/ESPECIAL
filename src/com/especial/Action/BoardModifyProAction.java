@@ -17,11 +17,16 @@ public class BoardModifyProAction implements Action {
 
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		System.out.println("modify도착함!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		int room_review_no = 0;
+		
 		ActionForward forward = null;
 		boolean isModifySuccess = false;
+		System.out.println();
+		System.out.println(request.getParameter("texttitle"));
+		System.out.println(request.getParameter("room_review_no"));
+		int room_review_no = Integer.parseInt(request.getParameter("room_review_no"));
+		
 		System.out.println("리뷰번호"+room_review_no);
-		room_review_no=Integer.parseInt(request.getParameter("room_review_no"));
+		
 		HttpSession session = request.getSession();
 		String userid = (String)session.getAttribute("id");
 		String userpw = (String)session.getAttribute("pw");
@@ -30,13 +35,13 @@ public class BoardModifyProAction implements Action {
 			room_review_no = 1;
 		}		
 
-		BoardBean article = new BoardBean();
+		
 		BoardModifyProService boardModifyProService = new BoardModifyProService();
 		
 		// 글 작성자의 db 내용 
 		ArrayList<BoardBean> userinfo = new ArrayList<BoardBean>();
 		userinfo = (ArrayList<BoardBean>) boardModifyProService.isArticleWriter(room_review_no);
-		
+		BoardBean article = new BoardBean();
 		String dbid = userinfo.get(0).getMember_id();
 		String dbpw = userinfo.get(0).getMember_password();
 
@@ -47,7 +52,7 @@ public class BoardModifyProAction implements Action {
 				isRightUser = true;
 				article.setRoom_review_no(room_review_no);
 				article.setRoom_review_title(request.getParameter("texttitle"));
-				article.setRoom_review_contents(request.getParameter("contents"));
+				article.setRoom_review_contents(request.getParameter("content"));
 				isModifySuccess = boardModifyProService.modifyArticle(article);
 				
 				forward = new ActionForward();

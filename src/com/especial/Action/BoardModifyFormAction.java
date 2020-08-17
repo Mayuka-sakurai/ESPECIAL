@@ -34,11 +34,11 @@ public class BoardModifyFormAction implements Action {
 
 		String dbid = article.get(0).getMember_id();
 		String dbpw = article.get(0).getMember_password();
+		request.setAttribute("article", article);
 
 		if(dbid.equals(userid)) {
 			if(dbpw.equals(userpw)) {
 
-				request.setAttribute("article", article);
 				forward.setPath("/review_modify.jsp");
 			}
 		}

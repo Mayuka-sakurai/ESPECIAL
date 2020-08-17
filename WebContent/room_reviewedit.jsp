@@ -145,6 +145,11 @@
 					class="btn btn-danger btn btn-primary btn-lg" id="submit-btn" />
 				&nbsp;&nbsp;&nbsp; <input type="reset" value="reset"
 					class="btn btn-default btn btn-primary btn-lg" id="reset-btn" />
+					<a href="javascript:history.go(-1)">
+					<input type="button" value="back"
+					class="btn btn-default btn btn-primary btn-lg" id="back-btn"  
+					/>
+					</a>
 			</div>
 		</form>
 	</div>
