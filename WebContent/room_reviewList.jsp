@@ -89,7 +89,7 @@
 		<div class="loader"></div>
 	</div>
 
-	<%@include file = "header.html" %>
+	<%@include file = "header.jsp" %>
 
 
 

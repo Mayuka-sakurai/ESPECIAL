@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset = UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	request.setCharacterEncoding("UTF-8");
-String id = (String)session.getAttribute("id");
-String pw = (String)session.getAttribute("pw");
 
-
-	System.out.println(id);
-	
-%>
 
 
 <!DOCTYPE html>
@@ -52,7 +44,7 @@ String pw = (String)session.getAttribute("pw");
 					<ul>
 						<li><a href="#">JP</a></li>
 						<li><a href="mainpage.jsp">KO</a></li>
-							<%if(id == null) {%>
+							<%if(session.getAttribute("id") == null && session.getAttribute("pw") == null) {%>
 						<li><a href="login.html">Login</a></li>
 						<li><a href="signup.jsp">Signup</a></li>
 						

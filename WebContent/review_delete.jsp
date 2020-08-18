@@ -3,7 +3,8 @@
 <% 
 	
 	String nowPage = (String)request.getAttribute("page");
-	
+	String id = (String)session.getAttribute("id");
+	String pw = (String)session.getAttribute("pw");
 	int room_review_no = (Integer)request.getAttribute("room_review_no");
  %>
 
@@ -16,11 +17,11 @@
 <title>:: Delete Review ::</title>
 </head>
 <body>
-	<section id="deletepage">
 
-		<section name="header">
-			<%@include file="header.html" %>
-		</section>
+	
+			<%@include file="header.jsp" %>
+
+	<section id="deletepage">
 		<section class="content">
 
 			<form name="deleteReview"

@@ -39,11 +39,6 @@
     </header>
     <!-- Header End -->
 
-    <!-- Hero Area Section Begin -->
-    <div>
-     <img src="www.placehold.it/300x200" alt="">
-    </div>
-    <!-- Hero Area Section End -->
 
     <!-- Search Filter Section Begin -->
 

@@ -54,12 +54,14 @@ String pw = (String)session.getAttribute("pw");
 					<ul>
 						<li><a href="#">JP</a></li>
 						<li><a href="#">KO</a></li>
-						<%if(id == null) {%>
-						<li><a href="login.html">Login</a></li>
+						<%if(id == null & pw ==null) {%>
+						<li id="login" name="login"><a href="login.html">Login</a></li>
 						<li><a href="signup.jsp">Signup</a></li>
 						
 						<%}else{ %>
-						<li><a href="login.html">Logout</a></li>
+						<a href="mainpage.jsp">
+						<li id="logout" name="logout">Logout</li>
+						</a>
 						<li><a href="booking.jsp">MyPage</a></li>
 						<%} %>
 					</ul>
@@ -68,6 +70,7 @@ String pw = (String)session.getAttribute("pw");
 					<ul>
 						<li><a href="#">Hotel</a>
 							<ul class="drop-menu">
+							<li><a href="rooms.jsp">ESPECIAL'S ROOMS</a>
 								<li><a href="#">President Room</a></li>
 								<li><a href="#">Suite Room</a></li>
 								<li><a href="#">Residence Double</a></li>
@@ -388,6 +391,14 @@ String pw = (String)session.getAttribute("pw");
 		<script src="js/jquery.slicknav.js"></script>
 		<script src="js/owl.carousel.min.js"></script>
 		<script src="js/main.js"></script>
+		<script>
+		
+		$('#logout').on("click", function(){
+			<% session.invalidate(); %>
+			
+			   
+		});
+		</script>
 </body>
 
 </html>

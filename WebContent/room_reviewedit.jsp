@@ -1,9 +1,13 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"%>
 
-<% 
-	String id = (String)session.getAttribute("id");
-  	String pw = (String)session.getAttribute("pw"); 
-   
+<%
+	request.setCharacterEncoding("UTF-8");
+String id = (String)session.getAttribute("id");
+String pw = (String)session.getAttribute("pw");
+
+
+	System.out.println("header id :" +id);
+	
 %>
 
 <!DOCTYPE html>
@@ -35,7 +39,9 @@
 	</div>
 
 	<!-- Header Section Begin -->
-	<%@include file="header.html" %>
+	<%@include file="header.jsp" %>
+	
+	
 	<!-- Header End -->
 
 	<!-- Hero Area Section Begin -->

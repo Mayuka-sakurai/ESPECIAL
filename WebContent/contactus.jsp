@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset = UTF-8"
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -34,7 +37,7 @@
 
     <!-- Header Section Begin -->
     <header class="header-section">
-      <h1>헤더!!!!!!!!!</h1>
+      <% include file="header.jsp"%>
     </header>
     <!-- Header End -->
 
