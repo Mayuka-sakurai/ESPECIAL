@@ -3,7 +3,7 @@ package com.especial.SVC;
 import static com.especial.DBconn.JdbcUtil.*;
 
 import java.sql.Connection;
-import com.especial.BoardDAO.BoardDAO;
+import com.especial.BoardDAO.REVIEW_BoardDAO;
 
 import com.especial.VO.BoardBean;
 
@@ -15,7 +15,7 @@ public class BoardReplyProService {
 		boolean isReplySuccess = false;
 		int insertCount = 0;
 		Connection con = getConnection();
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 
 	
 		insertCount = boardDAO.insertReplyArticle(article);

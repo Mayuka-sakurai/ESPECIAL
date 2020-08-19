@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset = UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 
@@ -38,7 +38,7 @@
 			<div class="inner-header">
 				<div class="logo">
 					<a href="mainpage.jsp"><img src="img/logo.png"
-						alt="ë¡ê³ ì´ë¯¸ì§" /></a>
+						alt="logo" /></a>
 				</div>
 				<nav class="nav-right">
 					<ul>
@@ -51,6 +51,9 @@
 						<%}else{ %>
 						<li id="logout" name="logout">Logout</li>
 						<li><a href="booking.jsp">MyPage</a></li>
+						<%} %>
+						<%if(session.getAttribute("id").equals("admin")){ %>
+						<li><a href="#">administrator</a></li>
 						<%} %>
 					</ul>
 				</nav>

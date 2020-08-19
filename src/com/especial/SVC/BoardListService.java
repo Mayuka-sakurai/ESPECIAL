@@ -3,7 +3,7 @@ package com.especial.SVC;
 import java.sql.ResultSet;
 import java.util.List;
 
-import com.especial.BoardDAO.BoardDAO;
+import com.especial.BoardDAO.REVIEW_BoardDAO;
 import com.especial.VO.BoardBean;
 
 
@@ -13,7 +13,7 @@ public class BoardListService {
 		
 		int listCount = 0;
 
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 	
 		listCount = boardDAO.selectListCount();
 		
@@ -28,7 +28,7 @@ public class BoardListService {
 		
 		List<BoardBean> articleList = null;
 
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 
 		articleList = boardDAO.selectArticleList(page, limit);
 		System.out.println("articlelist = "+ articleList);
@@ -39,7 +39,7 @@ public class BoardListService {
 
 	public int getHotelArticleCount() {
 		
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 		
 		int hotelcount = boardDAO.hotelCount();
 		System.out.println("hotelcount" + hotelcount);
@@ -47,7 +47,7 @@ public class BoardListService {
 	}
 	
 	public int getFacilityArticleCount() {
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 		
 		int facilityCount = boardDAO.facilityCount();
 		System.out.println("facility" + facilityCount);
@@ -55,7 +55,7 @@ public class BoardListService {
 	}
 	
 	public int getHallArticleCount() {
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 		
 		int hallcount = boardDAO.hallcount();
 		

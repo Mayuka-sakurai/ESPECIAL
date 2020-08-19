@@ -4,7 +4,7 @@ package com.especial.SVC;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.especial.BoardDAO.BoardDAO;
+import com.especial.BoardDAO.REVIEW_BoardDAO;
 
 import com.especial.VO.BoardBean;
 
@@ -13,8 +13,8 @@ public class BoardDeleteProService {
 
 	public List<BoardBean> isArticleWriter(int room_review_no) throws Exception {
 
-		BoardDAO boardDAO = new BoardDAO();
-		BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = new REVIEW_BoardDAO();
+		REVIEW_BoardDAO.getinstance();
 		List<BoardBean> writerInfo = new ArrayList<BoardBean>();
 		writerInfo = boardDAO.isArticleBoardWriter(room_review_no);
 
@@ -28,7 +28,7 @@ public class BoardDeleteProService {
 		// TODO Auto-generated method stub
 		
 		boolean isRemoveSuccess = false;
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 		int deleteCount = boardDAO.deleteArticle(room_review_no);
 		System.out.println(room_review_no);
 		System.out.println("****************"+deleteCount);

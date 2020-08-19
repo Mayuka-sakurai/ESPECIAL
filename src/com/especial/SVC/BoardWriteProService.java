@@ -1,6 +1,6 @@
 package com.especial.SVC;
 
-import com.especial.BoardDAO.BoardDAO;
+import com.especial.BoardDAO.REVIEW_BoardDAO;
 import com.especial.VO.BoardBean;
 
 
@@ -11,8 +11,8 @@ public class BoardWriteProService {
 		
 		boolean isWriteSuccess = false;
 	
-		BoardDAO boardDAO = BoardDAO.getinstance();
-		boardDAO = new BoardDAO();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
+		boardDAO = new REVIEW_BoardDAO();
 		int room_review_no = 0;
 		
 		room_review_no = boardDAO.articleNumber();

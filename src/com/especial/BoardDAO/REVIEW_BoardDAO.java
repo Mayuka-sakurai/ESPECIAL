@@ -17,24 +17,24 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class BoardDAO {
+public class REVIEW_BoardDAO {
 
 	Connection con;
 	SqlSessionFactory sqlfactory;
 
-	private static BoardDAO instance;
+	private static REVIEW_BoardDAO instance;
 
-	public static BoardDAO getinstance() {
+	public static REVIEW_BoardDAO getinstance() {
 		if(instance == null) {
-			synchronized (BoardDAO.class) {
-				instance = new BoardDAO();
+			synchronized (REVIEW_BoardDAO.class) {
+				instance = new REVIEW_BoardDAO();
 			}
 		}
 		return instance;
 	}
 
 
-	public BoardDAO() {
+	public REVIEW_BoardDAO() {
 		try {
 			Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
 			sqlfactory = new SqlSessionFactoryBuilder().build(reader);

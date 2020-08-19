@@ -7,6 +7,8 @@
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.sql.*"%>
+<%@page import="javax.servlet.http.HttpSession" %>
+<%@page import="javax.servlet.http.HttpServletRequest" %>
 
 <%@page import="com.especial.MemberDAO.*"%>
 <%@page import="com.especial.MemberDTO.*"%>
@@ -32,7 +34,7 @@
 	String inputpw = request.getParameter("pw");
 	String dbid = null;
 	String dbpw = null;
-
+	HttpSession sess = request.getSession();
 	List<Member_dto> result = dao.logincheck(inputid);
 
 
@@ -48,6 +50,9 @@
 		if (inputpw.equals(dbpw)) {
 			session.setAttribute("id", dbid);
 			session.setAttribute("pw", dbpw);
+
+		System.out.println("로그인시 아이디"+session.getAttribute("id"));
+		System.out.println("로그인시 비밀번호"+session.getAttribute("pw"));
 	
 			response.sendRedirect("mainpage.jsp");
 		} else {

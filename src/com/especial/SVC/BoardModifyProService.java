@@ -4,7 +4,7 @@ package com.especial.SVC;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.especial.BoardDAO.BoardDAO;
+import com.especial.BoardDAO.REVIEW_BoardDAO;
 import com.especial.VO.BoardBean;
 
 
@@ -13,7 +13,7 @@ public class BoardModifyProService {
 	public List<BoardBean> isArticleWriter(int room_review_no) throws Exception {
 		
 		
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 		ArrayList<BoardBean> userInfo = new ArrayList<BoardBean>();
 		// 글 작성자의 information get
 		userInfo = (ArrayList<BoardBean>) boardDAO.isArticleBoardWriter(room_review_no);
@@ -25,7 +25,7 @@ public class BoardModifyProService {
 	public boolean modifyArticle(BoardBean article) throws Exception {
 		
 		boolean isModifySuccess = false;
-		BoardDAO boardDAO = BoardDAO.getinstance();
+		REVIEW_BoardDAO boardDAO = REVIEW_BoardDAO.getinstance();
 		
 		
 		List<BoardBean> temp = boardDAO.updateArticle(article);

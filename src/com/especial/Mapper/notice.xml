@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+
+<mapper namespace="notice">
+
+	<select id="listCount" resultType="Integer">
+		select max(notice_no)
+		from
+		especial.notice
+	</select>
+
+	<insert id="insertArticle">
+
+		insert into especial.notice values(
+		#{notice_no},
+		#{admin_id}, #{admin_password}, #{notice_category}, #{notice_title},
+		#{notice_contents},
+		#{notice_file}, now(), #{readcount}
+		);
+
+	</insert>
+
+	<select id="selectArticleList"
+		resultType="com.especial.VO.NoticeBean" parameterType="Integer">
+
+		select * from
+		especial.notice order by notice_no desc,
+		room_review_date
+		desc limit
+		#{startrow}, 10
+
+	</select>
+
+	<select id="selectListCount" resultType="Integer">
+		select count(*) from
+		especial.notice
+	</select>
+
+	<select id="selectArticle" parameterType="Integer"
+		resultType="com.especial.VO.BoardBean">
+		select * from especial.notice where notice_no =
+		#{notice_no}
+	</select>
+
+	<update id="updateReadCount" parameterType="Integer">
+		update
+		especial.notice set readcount = readcount + 1 where
+		notice_no =
+		#{notice_no}
+
+	</update>
+
+	<select id="discountArticleCount" resultType="Integer">
+		select count(*)
+		from
+		especial.notice where
+		notice_category = 'discount'
+	</select>
+
+	<select id="upgradeArticleCount" resultType="Integer">
+		select count(*) from
+		especial.notice where
+		notice_category = 'upgrade'
+	</select>
+
+	<select id="promotionArticleCount" resultType="Integer">
+		select count(*)
+		from
+		especial.notice where
+		notice_category = 'promotion'
+
+	</select>
+
+	<select id="newsArticleCount" resultType="Integer">
+		select count(*)
+		from
+		especial.notice where
+		notice_category = 'news'
+
+	</select>
+
+	<select id="isArticleBoardWriter"
+		resultType="com.especial.VO.NoticeBean" parameterType="Integer">
+		select admin_id,
+		admin_password
+		from especial.notice where
+		notice_no =
+		#{notice_no}
+
+	</select>
+
+	<update id="updateArticle"
+		parameterType="com.especial.VO.NoticeBean">
+
+		update especial.notice set
+		notice_title =
+		#{notice_title},
+		notice_contents =
+		#{notice_contens}
+
+		where notice_no =
+		#{notice_no}
+
+	</update>
+
+	<delete id="deleteArticle" parameterType="Integer">
+
+		delete from
+		especial.notice where notice_no = #{notice_no};
+
+	</delete>
+</mapper>

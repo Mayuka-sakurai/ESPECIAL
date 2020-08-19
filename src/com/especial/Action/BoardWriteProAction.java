@@ -13,7 +13,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.especial.SVC.BoardWriteProService;
 import com.especial.VO.ActionForward;
 import com.especial.VO.BoardBean;
-import com.especial.BoardDAO.BoardDAO;
+import com.especial.BoardDAO.REVIEW_BoardDAO;
 
 
 public class BoardWriteProAction implements Action {

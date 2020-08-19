@@ -20,8 +20,8 @@ import com.especial.Action.BoardReplyProAction;
 import com.especial.VO.ActionForward;
 
 
-@WebServlet("*.nt")
-public class BoardController extends javax.servlet.http.HttpServlet 
+@WebServlet("*.room")
+public class Notice_Controller extends javax.servlet.http.HttpServlet 
 {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
