@@ -1,43 +1,43 @@
-
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="com.especial.VO.NoticeBean"%>
 <%@page import="com.especial.VO.PageInfo"%>
-<%@page import="com.especial.BoardDAO.REVIEW_BoardDAO"%>
-<%@page import="com.especial.VO.ReviewCount"%>
+<%@page import="com.especial.BoardDAO.NOTICE_BoardDAO"%>
+
 <%@page import="java.util.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.especial.Action.BoardListAction"%>
 <%@page import="java.io.PrintWriter"%>
 
-<%
-	//page detail 관련 내용
+<% 
+//page detail 관련 내용
 
-String id = (String) session.getAttribute("id");
-String pw = (String) session.getAttribute("pw");
-ArrayList<NoticeBean> articleList = (ArrayList<NoticeBean>) request.getAttribute("noticeList");
-PageInfo pageInfo = (PageInfo) request.getAttribute("pageInfo");
-ReviewCount reviewCount = (ReviewCount) request.getAttribute("listcount");
 
-int listCount = pageInfo.getListCount();
-int nowPage = pageInfo.getPage();
-int maxPage = pageInfo.getMaxPage();
-int startPage = pageInfo.getStartPage();
-int endPage = pageInfo.getEndPage();
+	PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+	String id = (String)session.getAttribute("id");
+	String pw = (String)session.getAttribute("pw");
+	
+	int listCount = pageInfo.getListCount();
+	int nowPage = pageInfo.getPage();
+	int maxPage = pageInfo.getMaxPage();
+	int startPage = pageInfo.getStartPage();
+	int endPage = pageInfo.getEndPage();
+
 %>
 
-<%
-	if (!id.equals("admin")) {
-	response.setContentType("text/html; charset=UTF-8");
+<% 
+	if(id == null || pw== null || id=="" || pw =="") {
+		response.setContentType("text/html; charset=UTF-8");
+		
+		PrintWriter list = response.getWriter();
+		
+		list.println("<script>");
+		list.println("<alert('로그인이 필요한 페이지 입니다.')>");
+		list.println("<a href='login.html'>");
+		list.println("</a></script>");
 
-	PrintWriter list = response.getWriter();
+	}
 
-	list.println("<script>");
-	list.println("<alert('관리자만 작성 가능한 페이지 입니다.')>");
-	list.println("<a href='mainpage.jsp>");
-	list.println("</a></script>");
-
-}
 %>
 
 <!DOCTYPE html>
@@ -57,7 +57,12 @@ int endPage = pageInfo.getEndPage();
 
 <!-- Css Styles -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="css/flaticon.css" type="text/css">
+<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
 <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+<link rel="stylesheet" href="css/nice-select.css" type="text/css">
+<link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
 <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="css/review.css" type="text/css">
@@ -68,14 +73,12 @@ int endPage = pageInfo.getEndPage();
 
 <body>
 
-	<!-- header include -->
+<!-- header include -->
 
 	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
 
-	<%@include file="header.jsp"%>
+
+	<%@include file = "header.jsp" %>
 
 
 
@@ -85,49 +88,23 @@ int endPage = pageInfo.getEndPage();
 			<div class="row">
 				<div class="col-lg-8">
 					<!-- Best Review Section Begin -->
-					<h1 Style="font-weight: 600; color: #a8a7a7">: Best Review</h1>
+					<h1 Style="font-weight: 600; color: #a8a7a7">: Notice</h1>
 					<br /> <br /> <br />
 
-					<div class="blog-item" id="best_review">
-						<div class="bi-pic">
-							<img src="img/reservation_top.jpg" alt="best_review_img">
-						</div>
-						<hr>
-						<div class="bi-text">
-							<div class="bi-title">
-								<div class="blog-time">April 15, 2020</div>
-								<h3>Best Flower Festival!</h3>
-								<span>#Holliday,&nbsp;<span>#Trip,&nbsp;</span><span>#Hotel,&nbsp;</span><span>#Festival</span></span>
-							</div>
-							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-								Ducimus soluta molestias deserunt laboriosam consequatur eos,
-								similique odit vel optio maxime tenetur atque assumenda
-								inventore cupiditate impedit laborum aut minus. Soluta?</p>
-						</div>
-						<hr>
-					</div>
-					<!-- Best Review Section End -->
+					
 					<!-- List View Section Begin -->
 					<div id="list_view">
 						<table class="table table-hover">
 							<thead>
 								<b>:: Our Reviews ::</b>
-								<%
-									if (id.equals("admin")) {
-								%>
 								<a href="Room_review.room"><input type="button"
-									class="primary-btn" id="newnews" value="New Notice"
-									 /></a>
-								<%
-									}
-								%>
+									class="primary-btn" id="newreview" value="New Review" /></a>
+
 							</thead>
 
 							<tbody>
 
-								<%
-									if (articleList != null && listCount > 0) {
-								%>
+								<% if(articleList != null && listCount > 0) { %>
 
 
 								<tr id="tr_top">
@@ -139,24 +116,24 @@ int endPage = pageInfo.getEndPage();
 									<th>Hit</th>
 								</tr>
 								<%
-									for (int i = 0; i < articleList.size(); i++) {
-								%>
+
+	for(int i = 0; i < articleList.size(); i++){
+
+%>
 
 								<tr class="list" name="viewList">
-									<td><%=articleList.get(i).getRoom_review_no()%></td>
-									<td><%=articleList.get(i).getRoom_review_category()%></td>
+									<td><%=articleList.get(i).getRoom_review_no() %></td>
+									<td><%=articleList.get(i).getRoom_review_category() %></td>
 									<td><a
-										href="reviewDetail.room?room_review_no=<%=articleList.get(i).getRoom_review_no()%>&page=<%=nowPage%>">
+										href="reviewDetail.room?room_review_no=<%=articleList.get(i).getRoom_review_no()%>&page=<%=nowPage %>">
 
-											<%=articleList.get(i).getRoom_review_title()%>
+											<%=articleList.get(i).getRoom_review_title() %>
 									</a></td>
-									<td><%=articleList.get(i).getRoom_review_date()%></td>
-									<td><%=articleList.get(i).getMember_id()%></td>
-									<td><%=articleList.get(i).getBOARD_READCOUNT()%></td>
+									<td><%=articleList.get(i).getRoom_review_date() %></td>
+									<td><%=articleList.get(i).getMember_id() %></td>
+									<td><%=articleList.get(i).getBOARD_READCOUNT() %></td>
 								</tr>
-								<%
-									}
-								%>
+								<%} %>
 								<!-- for(int i=0; i < asrticleList.size(); i++) 종료  -->
 
 							</tbody>
@@ -167,56 +144,34 @@ int endPage = pageInfo.getEndPage();
 					<!-- bottom page List count section start -->
 					<div class="blog-pagination">
 
-						<%
-							if (nowPage <= 1) {
-						%>
+						<%if(nowPage <= 1){ %>
 						&lt; &nbsp;
-						<%
-							} else {
-						%>
-						<a href="room_reviewList.room?page=<%=nowPage - 1%>">&lt;</a>&nbsp;
-						<%
-							}
-						%>
+						<%}else{%>
+						<a href="room_reviewList.room?page=<%=nowPage -1%>">&lt;</a>&nbsp;
+						<%} %>
 						<!-- for/else 닫기 -->
 
-						<%
-							for (int a = startPage; a <= endPage; a++) {
-							if (a == nowPage) {
-						%>
-						[<%=a%>]
-						<%
-							} else {
-						%>
-						<a href="room_reviewList.room?page=<%=a%>">[<%=a%>]
+						<%for(int a = startPage; a <= endPage; a++){
+						if(a == nowPage){%>
+						[<%=a %>]
+						<%}else{ %>
+						<a href="room_reviewList.room?page=<%=a %>">[<%=a %>]
 						</a>&nbsp;
-						<%
-							}
-						%>
+						<%} %>
 						<!-- else문 종료 -->
-						<%
-							}
-						%>
+						<%} %>
 						<!-- for문 종료 -->
 
-						<%
-							if (nowPage >= maxPage) {
-						%>
+						<%if(nowPage >= maxPage){ %>
 						&gt;
-						<%
-							} else {
-						%>
-						<a href="room_reviewList.room?page=<%=nowPage + 1%>">&gt;</a>
-						<%
-							}
-						%>
+						<%}else{ %>
+						<a href="room_reviewList.room?page=<%=nowPage +1 %>">&gt;</a>
+						<%} %>
 						<!-- else문 종료 -->
 
 					</div>
 				</div>
-				<%
-					}
-				%>
+				<%} %>
 				<!-- if(articleList != null && listCount > 0) 종료 -->
 				<!-- bottom page List count section End -->
 				<!-- Categoty count section Start -->
@@ -227,15 +182,15 @@ int endPage = pageInfo.getEndPage();
 								<hr>
 								<h4 id="title">::&nbsp;&nbsp;Categories</h4>
 								<ul>
-									<li class="a_list_colorChange" name="hotel"><a href="#">|&nbsp;&nbsp;&nbsp;Hotel<span><sup>(<%=hotel%>)
+									<li class="a_list_colorChange" name="hotel"><a href="#">|&nbsp;&nbsp;&nbsp;Hotel<span><sup>(<%= hotel %>)
 											</sup></a></span></li>
 									<li class="a_list_colorChange" name="Facilities"><a
-										href="#"> |&nbsp;&nbsp;&nbsp;Facilities<span><sup>(<%=facility%>)
+										href="#"> |&nbsp;&nbsp;&nbsp;Facilities<span><sup>(<%= facility %>)
 											</sup></a></span></li>
-									<li class="a_list_colorChange" name="offers"><a href="#">|&nbsp;&nbsp;&nbsp;Offers<span><sup>(<%=offer%>)
+									<li class="a_list_colorChange" name="offers"><a href="#">|&nbsp;&nbsp;&nbsp;Offers<span><sup>(<%= offer %>)
 											</sup></a></span></li>
 									<li class="a_list_colorChange" name="wedding"><a href="#">|&nbsp;&nbsp;&nbsp;Wedding
-											& Conference <span><sup>(<%=hall%>)
+											& Conference <span><sup>(<%= hall%>)
 											</sup>
 									</a></span></li>
 								</ul>
@@ -273,7 +228,7 @@ int endPage = pageInfo.getEndPage();
 	</section>
 	<!-- Review Section End -->
 	<!-- Footer Section Begin -->
-	<%@ include file="footer.jsp"%>
+	<%@ include file="footer.jsp" %>
 	<!-- Footer Section End -->
 
 
@@ -286,7 +241,7 @@ int endPage = pageInfo.getEndPage();
 	<script src="js/jquery.slicknav.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.js"></script>
-
+	
 
 </body>
 

@@ -10,7 +10,7 @@ public class NoticeBean {
 	private String notice_contents;
 	private String notice_file;
 	private Date notice_date;
-	private int readcount;
+	private int notice_readcount;
 	private String admin_id;
 	private String admin_password;
 	
@@ -51,11 +51,11 @@ public class NoticeBean {
 	public void setNotice_date(Date notice_date) {
 		this.notice_date = notice_date;
 	}
-	public int getReadcount() {
-		return readcount;
+	public int getNotice_readcount() {
+		return notice_readcount;
 	}
-	public void setReadcount(int readcount) {
-		this.readcount = readcount;
+	public void setNotice_readcount(int notice_readcount) {
+		this.notice_readcount = notice_readcount;
 	}
 	public String getAdmin_id() {
 		return admin_id;
@@ -69,8 +69,6 @@ public class NoticeBean {
 	public void setAdmin_password(String admin_password) {
 		this.admin_password = admin_password;
 	}
-	
-	
 	
 	
 }

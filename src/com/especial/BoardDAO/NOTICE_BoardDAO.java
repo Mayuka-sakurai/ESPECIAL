@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.especial.VO.BoardBean;
+import com.especial.VO.NoticeBean;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -77,11 +77,11 @@ public class NOTICE_BoardDAO {
 
 	// article 등록
 
-	public int insertArticle (BoardBean boardBean) {
+	public int insertArticle (NoticeBean noticeBean) {
 
 		SqlSession sqlsession = sqlfactory.openSession();
 
-		int count = sqlsession.insert("insertArticle",boardBean);
+		int count = sqlsession.insert("insertArticle", noticeBean);
 		sqlsession.commit();
 		sqlsession.close();
 		return count;
@@ -103,9 +103,9 @@ public class NOTICE_BoardDAO {
 	}
 
 	// 전체 article 가져오기 (List View)
-	public List<BoardBean> selectArticleList (int page, int limit) {
+	public List<NoticeBean> selectArticleList (int page, int limit) {
 
-		List<BoardBean> articleList = new ArrayList<BoardBean>();
+		List<NoticeBean> articleList = new ArrayList<NoticeBean>();
 
 		SqlSession sqlsession = sqlfactory.openSession();
 

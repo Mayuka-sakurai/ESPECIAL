@@ -8,19 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.especial.Action.Action;
-import com.especial.Action.BoardListAction;
-import com.especial.Action.BoardWriteProAction;
-import com.especial.Action.BoardDeleteProAction;
-import com.especial.Action.BoardDetailAction;
-import com.especial.Action.BoardModifyFormAction;
-import com.especial.Action.BoardModifyProAction;
-import com.especial.Action.BoardReplyFormAction;
-import com.especial.Action.BoardReplyProAction;
+
+import com.especial.Action.NoticeWriteProAction;
+
 
 import com.especial.VO.ActionForward;
 
 
-@WebServlet("*.room")
+@WebServlet("*.nt")
 public class Notice_Controller extends javax.servlet.http.HttpServlet 
 {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
@@ -34,14 +29,14 @@ public class Notice_Controller extends javax.servlet.http.HttpServlet
 		Action action = null;
 		
 		
-		if(command.equals("/Room_review.room")) {
+		if(command.equals("/new_notice.nt")) {
 			
 			forward = new ActionForward();
 			forward.setPath("/room_reviewedit.jsp");
 			
-		}else if(command.equals("/review_insert.room")){
-			// review 신규 작성시 BoardWritheProAction으로 forward 이동
-			action = new BoardWriteProAction();
+		}else if(command.equals("/notice_insert.nt")){
+			
+			action = new NoticeWriteProAction();
 			
 			try {
 				forward = action.execute(request, response);
