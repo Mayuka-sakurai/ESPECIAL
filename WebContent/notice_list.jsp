@@ -8,6 +8,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.especial.Action.BoardListAction"%>
 <%@page import="java.io.PrintWriter"%>
+<%@page import =  %>
 
 <% 
 //page detail 관련 내용
@@ -16,6 +17,8 @@
 	PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
 	String id = (String)session.getAttribute("id");
 	String pw = (String)session.getAttribute("pw");
+	ArrayList<BoardBean> articleList = (ArrayList<BoardBean>)request.getAttribute("articleList");
+	
 	
 	int listCount = pageInfo.getListCount();
 	int nowPage = pageInfo.getPage();

@@ -27,7 +27,7 @@
 
 <header class="header-section set-bg"
 	style="background-image: url(img/signup_top.jpg);">
-<%@include file="header.html" %>
+<%@include file="header.jsp" %>
 </header>
 <!-- Header Menu End -->
 

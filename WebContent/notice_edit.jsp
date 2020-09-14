@@ -1,4 +1,5 @@
-<%@page language="java" contentType="text/html; charset=UTF-8"%>
+<%@page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -112,10 +113,10 @@
 		src="https://cdn.ckeditor.com/ckeditor5/20.0.0/classic/ckeditor.js "></script>
 	<script src="textedit.js"></script>
 </body>
-<!-- Texteditor  Script -->
+<!-- Texteditor  Script 
 <script>
     ClassicEditor.create(document.querySelector("#editor")).catch((error) => {
       console.error(error);
     });
-</script>
+</script>-->
 </html>
